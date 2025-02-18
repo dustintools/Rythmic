@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Cartas Musicales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Pantalla de inicio de sesión -->
+    <div id="login-screen" class="screen">
+        <h2>Iniciar Sesión</h2>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Correo" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <p>No tienes cuenta? <a href="#" id="show-register">Registrate</a></p>
+    </div>
+
+    <!-- Pantalla de Registro (si no tienes cuenta) -->
+    <div id="register-screen" class="screen" style="display: none;">
+        <h2>Crear Cuenta</h2>
+        <form id="register-form">
+            <input type="email" id="reg-email" placeholder="Correo" required>
+            <input type="password" id="reg-password" placeholder="Contraseña" required>
+            <button type="submit">Registrar</button>
+        </form>
+        <p>¿Ya tienes cuenta? <a href="#" id="show-login">Iniciar sesión</a></p>
+    </div>
+
+    <!-- Pantalla de activación del código -->
+    <div id="activation-screen" class="screen" style="display: none;">
+        <h2>Ingresa tu código de activación</h2>
+        <input type="text" id="activation-code" placeholder="Código" required>
+        <button onclick="validateCode()">Activar</button>
+    </div>
+
+    <!-- Pantalla del juego -->
+    <div id="game-screen" class="screen" style="display: none;">
+        <h2>¡Bienvenido al Juego!</h2>
+        <button onclick="logout()">Cerrar Sesión</button>
+        <!-- Aquí va el código de tu juego (cartas y botones) -->
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
